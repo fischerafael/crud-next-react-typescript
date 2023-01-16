@@ -1,20 +1,16 @@
 import React from "react";
 import * as Chakra from "@chakra-ui/react";
+import NextLink from "next/link";
+import { PageTemplate } from "@/src/components/PageTemplate";
 
 export const PageLanding = () => {
   return (
-    <Chakra.Grid
-      w="full"
-      bg="gray.50"
-      minH="100vh"
-      justifyItems="center"
-      alignContent="flex-start"
-    >
-      <Chakra.Grid w="full" maxW="container.lg">
+    <PageTemplate>
+      <>
         <Header />
         <HeroSection />
-      </Chakra.Grid>
-    </Chakra.Grid>
+      </>
+    </PageTemplate>
   );
 };
 
@@ -30,8 +26,13 @@ export const Header = () => {
           </Chakra.Text>
         </Chakra.Text>
       </Chakra.HStack>
-      <Chakra.Button colorScheme="red" px="8">
-        Sign Up
+      <Chakra.Button
+        href="/public/login"
+        as={NextLink}
+        colorScheme="red"
+        px="8"
+      >
+        Sign In
       </Chakra.Button>
     </Chakra.HStack>
   );
