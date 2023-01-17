@@ -3,6 +3,8 @@ import React from "react";
 import * as Chakra from "@chakra-ui/react";
 import * as Icon from "react-icons/hi";
 import { LinkWithIcon } from "../PageLogIn";
+import { Input } from "@/src/components/Input";
+import { Button } from "@/src/components/Button";
 
 export const PageSignUp = () => {
   return (
@@ -28,6 +30,8 @@ export const MainSection = () => {
         templateColumns="1fr 1fr"
         padding="16"
         borderRadius="16"
+        border="1px"
+        borderColor="gray.300"
       >
         <Chakra.VStack align="flex-start" spacing="8">
           <Chakra.Image src="/logo.svg" />
@@ -40,11 +44,29 @@ export const MainSection = () => {
               NGO's pets.
             </Chakra.Text>
           </Chakra.VStack>
-          <LinkWithIcon
-            href="/"
-            icon={Icon.HiOutlineHome}
-            text="Back to Home"
-          />
+          <Chakra.VStack spacing="2" align="flex-start">
+            <LinkWithIcon
+              href="/public/login"
+              icon={Icon.HiOutlineLogout}
+              text="I already have an account"
+            />
+            <LinkWithIcon
+              href="/"
+              icon={Icon.HiOutlineHome}
+              text="Back to Home"
+            />
+          </Chakra.VStack>
+        </Chakra.VStack>
+
+        <Chakra.VStack w="full" as="form" spacing="4">
+          <Input placeholder="NGO's Name" />
+          <Input placeholder="Email" />
+          <Input placeholder="WhatsApp" />
+          <Chakra.HStack w="full" spacing="4">
+            <Input placeholder="City" />
+            <Input placeholder="State" />
+          </Chakra.HStack>
+          <Button type="submit"> Sign Up</Button>
         </Chakra.VStack>
       </Chakra.Grid>
     </Chakra.Grid>

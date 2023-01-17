@@ -1,40 +1,27 @@
 import React from "react";
 import * as Chakra from "@chakra-ui/react";
-import NextLink from "next/link";
 import { PageTemplate } from "@/src/components/PageTemplate";
+import { Header } from "@/src/components/Header";
+import { ButtonLink } from "@/src/components/ButtonLink";
 
 export const PageLanding = () => {
   return (
     <PageTemplate>
       <>
-        <Header />
+        <Header
+          text={
+            <Chakra.Text>
+              Total of{" "}
+              <Chakra.Text as="span" fontWeight="bold">
+                40 cases
+              </Chakra.Text>
+            </Chakra.Text>
+          }
+          action={<ButtonLink href="/public/login">Sign In</ButtonLink>}
+        />
         <HeroSection />
       </>
     </PageTemplate>
-  );
-};
-
-export const Header = () => {
-  return (
-    <Chakra.HStack h="10vh" w="full" justify="space-between">
-      <Chakra.HStack spacing="8">
-        <Chakra.Image src="/logo.svg" alt="Logo" w="96px" />
-        <Chakra.Text>
-          Total of{" "}
-          <Chakra.Text as="span" fontWeight="bold">
-            40 cases
-          </Chakra.Text>
-        </Chakra.Text>
-      </Chakra.HStack>
-      <Chakra.Button
-        href="/public/login"
-        as={NextLink}
-        colorScheme="red"
-        px="8"
-      >
-        Sign In
-      </Chakra.Button>
-    </Chakra.HStack>
   );
 };
 

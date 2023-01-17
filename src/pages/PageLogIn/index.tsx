@@ -4,6 +4,8 @@ import * as Chakra from "@chakra-ui/react";
 import * as Icon from "react-icons/hi";
 import NextLink from "next/link";
 import { IconType } from "react-icons/lib";
+import { Input } from "@/src/components/Input";
+import { Button } from "@/src/components/Button";
 
 export const PageLogIn = () => {
   return (
@@ -18,14 +20,19 @@ export const MainSection = () => {
     <Chakra.Grid minH="90vh" templateColumns="1fr 1fr" justifyContent="center">
       <Chakra.VStack justify="center" align="flex-start" spacing="8">
         <Chakra.Image src="/logo.svg" />
-        <Chakra.VStack spacing="4" align="flex-start" w="full" maxW="300px">
+        <Chakra.VStack
+          spacing="4"
+          align="flex-start"
+          w="full"
+          maxW="300px"
+          as="form"
+        >
           <Chakra.Text fontWeight="bold" fontSize="2xl">
             Log In
           </Chakra.Text>
           <Chakra.Input fontSize="sm" />
-          <Chakra.Button colorScheme="red" px="8" w="full">
-            Log In
-          </Chakra.Button>
+          <Input placeholder="Email" />
+          <Button type="submit"> Log In</Button>
         </Chakra.VStack>
         <Chakra.VStack spacing="2" align="flex-start">
           <LinkWithIcon

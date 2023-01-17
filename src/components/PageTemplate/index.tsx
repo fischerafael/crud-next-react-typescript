@@ -8,10 +8,11 @@ export const PageTemplate = ({ children }: PageTemplateProps) => {
   return (
     <Chakra.Grid
       w="full"
-      bg="gray.50"
+      bg="gray.100"
       minH="100vh"
       justifyItems="center"
       alignContent="flex-start"
+      color="gray.700"
     >
       <Chakra.Grid w="full" maxW="container.lg">
         {children}
