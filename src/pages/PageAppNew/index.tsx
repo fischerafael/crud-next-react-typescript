@@ -1,13 +1,14 @@
 import { PageTemplate } from "@/src/components/PageTemplate";
+import { TemplateFormSection } from "@/src/components/TemplateFormSection";
 import React from "react";
 import * as Chakra from "@chakra-ui/react";
 import * as Icon from "react-icons/hi";
 import { LinkWithIcon } from "../PageLogIn";
 import { Input } from "@/src/components/Input";
 import { Button } from "@/src/components/Button";
-import { TemplateFormSection } from "@/src/components/TemplateFormSection";
+import { TextArea } from "@/src/components/TextArea";
 
-export const PageSignUp = () => {
+export const PageAppNew = () => {
   return (
     <PageTemplate>
       <TemplateFormSection
@@ -16,37 +17,31 @@ export const PageSignUp = () => {
             <Chakra.Image src="/logo.svg" />
             <Chakra.VStack spacing="4" align="flex-start" w="full" maxW="300px">
               <Chakra.Text fontWeight="bold" fontSize="2xl">
-                Sign Up
+                Add New Case
               </Chakra.Text>
               <Chakra.Text maxW="400px">
-                Register, enter the platform and let people help you help your
-                NGO's pets.
+                Describe the case in detail to find a hero to solve it.
               </Chakra.Text>
             </Chakra.VStack>
             <Chakra.VStack spacing="2" align="flex-start">
               <LinkWithIcon
-                href="/public/login"
-                icon={Icon.HiOutlineLogout}
-                text="I already have an account"
-              />
-              <LinkWithIcon
-                href="/"
+                href="/app"
                 icon={Icon.HiOutlineHome}
-                text="Back to Home"
+                text="Back to App"
               />
             </Chakra.VStack>
           </>
         }
         right={
           <>
-            <Input placeholder="NGO's Name" />
-            <Input placeholder="Email" />
-            <Input placeholder="WhatsApp" />
-            <Chakra.HStack w="full" spacing="4">
-              <Input placeholder="City" />
-              <Input placeholder="State" />
+            <Input placeholder="Case Title" />
+            <TextArea placeholder="Description" minH="200px" />
+            <Input placeholder="Amount (U$)" type="number" />
+            <Chakra.HStack w="full" justify="flex-end">
+              <Button type="submit" maxW="200px">
+                Add
+              </Button>
             </Chakra.HStack>
-            <Button type="submit"> Sign Up</Button>
           </>
         }
       />

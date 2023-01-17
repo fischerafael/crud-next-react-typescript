@@ -7,9 +7,17 @@ interface ButtonLinkProps {
   children: React.ReactNode;
 }
 
-export const ButtonLink = ({ href, children }: ButtonLinkProps) => {
+export const ButtonLink = ({ href, children, ...props }: ButtonLinkProps) => {
   return (
-    <Chakra.Button href={href} as={NextLink} colorScheme="red" px="8" h="12">
+    <Chakra.Button
+      href={href}
+      as={NextLink}
+      colorScheme="red"
+      px="8"
+      h="12"
+      maxW="200px"
+      {...props}
+    >
       {children}
     </Chakra.Button>
   );

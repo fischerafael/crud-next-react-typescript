@@ -4,6 +4,7 @@ import { PageTemplate } from "@/src/components/PageTemplate";
 import * as Chakra from "@chakra-ui/react";
 import * as Icon from "react-icons/hi";
 import React from "react";
+import { ButtonLink } from "@/src/components/ButtonLink";
 
 const cases: CardCaseProps[] = [
   {
@@ -26,7 +27,6 @@ const cases: CardCaseProps[] = [
       "A cadelinha Jolie foi atropelada por um carro no bairro Santana e teve que passar por uma cirurgia às pressas.",
     id: "asd",
     title: "Case 1",
-    onDelete: () => {},
   },
   {
     amount: "R$ 100.00",
@@ -52,12 +52,12 @@ export const PageApp = () => {
           }
           action={
             <Chakra.HStack spacing="4">
-              <Button maxW="200px">Create New</Button>
+              <ButtonLink href="/app/new">Create New</ButtonLink>
               <Chakra.IconButton
                 aria-label="LogOut"
                 colorScheme="red"
                 h="12"
-                w="20"
+                w="12"
                 variant="outline"
                 icon={<Icon.HiOutlineLogin />}
               />
@@ -73,7 +73,11 @@ export const PageApp = () => {
 
         <Chakra.SimpleGrid w="full" gap="8" columns={[1, 1, 2]}>
           {cases.map((item) => (
-            <CardCase key={item.id} {...item} />
+            <CardCase
+              onDelete={() => alert(`deleted on ${item.id}`)}
+              key={item.id}
+              {...item}
+            />
           ))}
         </Chakra.SimpleGrid>
       </Chakra.VStack>
