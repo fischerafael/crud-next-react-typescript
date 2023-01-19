@@ -39,9 +39,7 @@ export const HeroSection = () => {
             by NGOs
           </Chakra.Text>
         </Chakra.VStack>
-        <Chakra.Button colorScheme="red" px="8">
-          I Want To Help
-        </Chakra.Button>
+        <ButtonLink href="/public/cases">I Want To Help</ButtonLink>
       </Chakra.VStack>
       <Chakra.VStack justify="center">
         <Chakra.Image src="/hero-image.svg" />

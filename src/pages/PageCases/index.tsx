@@ -1,8 +1,8 @@
-import { Header } from "@/src/components/Header";
 import { PageTemplate } from "@/src/components/PageTemplate";
+import React from "react";
 import * as Chakra from "@chakra-ui/react";
 import * as Icon from "react-icons/hi";
-import React from "react";
+import { Header } from "@/src/components/Header";
 import { ButtonLink } from "@/src/components/ButtonLink";
 import { CardCase, CardCaseProps } from "@/src/components/CardCase";
 
@@ -37,30 +37,22 @@ const cases: CardCaseProps[] = [
   },
 ];
 
-export const PageApp = () => {
+export const PageCases = () => {
   return (
     <PageTemplate>
       <Chakra.VStack w="full" spacing="8" align="center" pb="16">
         <Header
           text={
             <Chakra.Text>
-              Welcome,{" "}
+              Total of{" "}
               <Chakra.Text as="span" fontWeight="bold">
-                fischerafael
+                40 cases
               </Chakra.Text>
             </Chakra.Text>
           }
           action={
             <Chakra.HStack spacing="4">
-              <ButtonLink href="/app/new">Create New</ButtonLink>
-              <Chakra.IconButton
-                aria-label="LogOut"
-                colorScheme="red"
-                h="12"
-                w="12"
-                variant="outline"
-                icon={<Icon.HiOutlineLogin />}
-              />
+              <ButtonLink href="/">Back to Home</ButtonLink>
             </Chakra.HStack>
           }
         />
@@ -74,9 +66,13 @@ export const PageApp = () => {
         <Chakra.SimpleGrid w="full" gap="8" columns={[1, 1, 2]}>
           {cases.map((item) => (
             <CardCase
-              onDelete={() => alert(`deleted on ${item.id}`)}
               key={item.id}
               {...item}
+              extra={{
+                email: "test@gmail.com",
+                ngo: "Google",
+                phone: "5622 ",
+              }}
             />
           ))}
         </Chakra.SimpleGrid>
